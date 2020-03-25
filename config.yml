@@ -1,0 +1,11 @@
+ports:
+  midi:
+    out:
+      - "AudioBox USB 96" # "IAC Driver Internal MIDI"
+    in:
+      - "nanoKEY2 KEYBOARD"
+
+samples:
+  dir: "samples"
+  files:
+    - "test.wav"
