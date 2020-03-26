@@ -22,6 +22,8 @@ public:
   LowPassFilter  lowpass_filter;
   BandPassFilter bandpass_filter;
 
+  AmplitudeEnvelope amplitude_envelope;
+  
   bool is_playing               = false;
   unsigned int buffer_offset[2] = { 0, 0 };
   

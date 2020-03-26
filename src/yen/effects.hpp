@@ -12,4 +12,7 @@
 #include "yen/effects/filter/lowpass.hpp"
 #include "yen/effects/filter/bandpass.hpp"
 
+// envelopes
+#include "yen/effects/envelope/amplitude.hpp"
+
 #endif

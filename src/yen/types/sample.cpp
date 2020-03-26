@@ -14,7 +14,8 @@ double Sample::get_frame(unsigned int channel) {
     buffer_offset[channel] = 0;
   }
 
-  value = bandpass_filter.compute(value);
+  // value = bandpass_filter.compute(value);
+  value = amplitude_envelope.compute(value);
   
   return value;
 }
