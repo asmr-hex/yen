@@ -31,4 +31,18 @@ MidiController::MidiController(std::shared_ptr<IO> io, std::shared_ptr<State> st
 
                  spdlog::info("midi off");
                });
+
+  // control effects
+  auto knobs_cc_events = io->midi_events
+    | rx::filter([] (midi_event_t midi_event) {
+                   return
+                     midi_event.source                  == "Midi Fighter Twister" &&
+                     ((unsigned int)midi_event.data[0]) == 176 &&  // cc + channel 1
+                     ((unsigned int)midi_event.data[1]) == 16; // control 16
+                 });
+
+  knobs_cc_events
+    .subscribe([io, state] (midi_event_t midi_event) {
+                 state->samples->samples[0]->bandpass_filter.kf = (double)midi_event.data[2] / 127;
+               });
 }

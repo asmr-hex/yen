@@ -1,9 +1,11 @@
 ports:
   midi:
     out:
-      - "AudioBox USB 96" # "IAC Driver Internal MIDI"
+      # - "AudioBox USB 96"
+      - "IAC Driver Internal MIDI"
     in:
       - "nanoKEY2 KEYBOARD"
+      - "Midi Fighter Twister"
 
 samples:
   dir: "samples"

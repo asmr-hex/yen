@@ -12,10 +12,15 @@
 
 #include <AudioFile.h>
 
+#include "yen/effects.hpp"
+
 
 class Sample {
 public:
   AudioFile<double> file;
+
+  LowPassFilter  lowpass_filter;
+  BandPassFilter bandpass_filter;
 
   bool is_playing               = false;
   unsigned int buffer_offset[2] = { 0, 0 };
